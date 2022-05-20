@@ -1,4 +1,4 @@
-export default class IPv4 {
+export default class IP {
   constructor(ip, mask) {
     this.ip = ip
     this.mask = mask
@@ -28,7 +28,7 @@ export default class IPv4 {
     return parseInt(string, 2)
   }
 
-  isValidIP() {
+  isValid() {
     const parsedIP = this.getIntArrayIP()
 
     return parsedIP && parsedIP.length === 4 && !parsedIP.some(oct => oct<0 || oct>255)
@@ -53,6 +53,6 @@ export default class IPv4 {
 
     console.log({ intMask })
 
-    return intIP.map((octIP, i) => octIP & intMask[i])
+    return intIP.map((octIP, i) => octIP & intMask[i]).join('.')
   }
 }

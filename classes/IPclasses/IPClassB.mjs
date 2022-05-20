@@ -1,4 +1,4 @@
-import { CLASS_B } from "../constants.mjs"
+import { CLASS_B } from "../../constants.mjs"
 import AbstractIPClass from "./AbstractIPClass.mjs"
 
 export default class IPClassB extends AbstractIPClass {

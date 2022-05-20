@@ -15,6 +15,6 @@ export default class AbstractIPClass {
   }
 
   isMyPrivateAddress(ip) {
-    return ip[0]>=this.privateAddressFrom[0] && ip[0]<=this.privateAddressTo[0]
+    return ip[0]>=this.privateAddressFrom?.[0] && ip[0]<=this.privateAddressTo?.[0]
   }
 }
