@@ -7,7 +7,7 @@ import {
 } from "./IPclasses/index.mjs";
 
 export default class IPv4 {
-  constructor(ip){
+  constructor(ip, mask){
     this.classA = new IPClassA();
     this.classB = new IPClassB();
     this.classC = new IPClassC();
@@ -15,10 +15,15 @@ export default class IPv4 {
     this.classE = new IPClassE();
 
     this.currentIP = ip && this.parseIP(ip);
+    this.currentMask = mask;
   }
 
   setIP(ip) {
     this.currentIP = this.parseIP(ip)
+  }
+
+  setMask(mask) {
+    this.currentMask = mask;
   }
 
   parseIP(stringIP) {
@@ -52,6 +57,10 @@ export default class IPv4 {
     if(this.classD.isMyClass(this.currentIP)) return "D"
     
     return "E"
+  }
+
+  getNetAddress() {
+
   }
 }
 
