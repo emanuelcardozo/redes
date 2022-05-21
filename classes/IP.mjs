@@ -51,8 +51,6 @@ export default class IP {
     const intIP = this.getIntArrayIP()
     const intMask = this.getIntMask()
 
-    console.log({ intMask })
-
     return intIP.map((octIP, i) => octIP & intMask[i]).join('.')
   }
 }

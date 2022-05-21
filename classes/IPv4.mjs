@@ -47,7 +47,6 @@ export default class IPv4 {
   getIPClass() {
     if(!this.currentAddress.isValid()) return false
   
-    console.log(this.currentAddress.getIntArrayIP())
     if(this.classA.isMyClass(this.currentAddress.getIntArrayIP())) return "A"
     if(this.classB.isMyClass(this.currentAddress.getIntArrayIP())) return "B"
     if(this.classC.isMyClass(this.currentAddress.getIntArrayIP())) return "C"
